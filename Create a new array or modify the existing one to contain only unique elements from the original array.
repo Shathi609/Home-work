@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    int arr[100], unique[100];
+    int n, i, j, k = 0;
+    int isUnique;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter %d elements: ", n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    for(i = 0; i < n; i++) {
+        isUnique = 1;
+
+        
+        for(j = 0; j < k; j++) {
+            if(arr[i] == unique[j]) {
+                isUnique = 0;
+                break;
+            }
+        }
+
+        if(isUnique == 1) {
+            unique[k] = arr[i];
+            k++;
+        }
+    }
+
+    printf("\nUnique elements are:\n");
+    for(i = 0; i < k; i++) {
+        printf("%d ", unique[i]);
+    }
+
+    return 0;
+}
